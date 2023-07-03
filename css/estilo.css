@@ -1,5 +1,14 @@
 /*RESET*/
-*{margin:0; padding:0; box-sizing: border-box; outline: none;}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;}
+
+/* VARIÁVEIS */
+:root{
+    --corAzul:#274083;
+}
 
 body{font-family: arial; color:#fff; display: grid; grid-template-columns: 75% 25%;
 grid-template-areas: 'cabecalho formulario'
@@ -13,7 +22,7 @@ header{
     grid-area:cabecalho;
 }
 .logo h1{
-    color:#274083; margin-left:10px;
+    color:var(--corAzul); margin-left:10px;
 }
 .logo img{
     width: 80px;
@@ -27,8 +36,8 @@ header{
 /*MAIN*/
 main{
     grid-area:principal;
-    background-color: #274083;
-    background: linear-gradient(to right,#3375B2, #274083);
+    background-color: var(--corAzul);
+    background: linear-gradient(to right,#3375B2, var(--corAzul));
     display: flex;
     align-items: center;
     padding-left: 50px;
@@ -54,9 +63,25 @@ main h3{
 /*ASIDE*/
 aside{
     grid-area:formulario;
-    background-color: #274083;
+    background-color: var(--corAzul);
 
 }
 
 /*FOOTER*/
-footer{grid-area:rodape;}
+footer{
+    grid-area:rodape;
+    background-color: #ccc;
+    color: var(--corAzul);
+    display: flex;
+    padding: 30px;
+}
+footer section{
+    margin: 5px 20px;
+}
+footer .rodape-titulo{
+    margin-bottom: 20px;
+}
+footer .rodape-conteudo{
+    text-align: justify;
+    line-height: 0.7cm;
+}
