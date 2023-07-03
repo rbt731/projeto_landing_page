@@ -1,0 +1,62 @@
+/*RESET*/
+*{margin:0; padding:0; box-sizing: border-box; outline: none;}
+
+body{font-family: arial; color:#fff; display: grid; grid-template-columns: 75% 25%;
+grid-template-areas: 'cabecalho formulario'
+                     'principal formulario'
+                     'rodape formulario';
+height:100vh;
+}
+
+/*HEADER*/
+header{
+    grid-area:cabecalho;
+}
+.logo h1{
+    color:#274083; margin-left:10px;
+}
+.logo img{
+    width: 80px;
+}
+.logo{
+    display:flex;
+    align-items: center;
+    padding:10px 30px;
+}
+
+/*MAIN*/
+main{
+    grid-area:principal;
+    background-color: #274083;
+    background: linear-gradient(to right,#3375B2, #274083);
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 1cm;
+}
+main figure{
+    width: 200px;
+
+}
+main figure img{
+    width: 100%;
+}
+main h1{
+    font-size: 40px;
+    width: 80%;
+    margin-bottom: 30px;
+}
+main h3{
+    width: 80%;
+}
+/*ASIDE*/
+aside{
+    grid-area:formulario;
+    background-color: #274083;
+
+}
+
+/*FOOTER*/
+footer{grid-area:rodape;}
