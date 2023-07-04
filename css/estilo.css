@@ -64,9 +64,49 @@ main h3{
 aside{
     grid-area:formulario;
     background-color: var(--corAzul);
-
 }
-
+aside h1{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+aside form{
+    width:90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+aside input, aside select, aside button{
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+}
+::placeholder{
+    color: black;
+}
+aside input:focus, aside select:focus{
+    outline: 2px solid #3375B2;
+}
+/* aside:where(input, select):focus{
+    outline: 2px solid #3375B2;
+} */
+aside button{
+    background-color: #11dd2c;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+aside button:hover{
+    box-shadow: 0 0 10px #000;
+    transition: all 0.2s linear;
+}
+aside small{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    display: block;
+}
 /*FOOTER*/
 footer{
     grid-area:rodape;
