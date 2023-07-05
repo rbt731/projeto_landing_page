@@ -10,11 +10,14 @@
     --corAzul:#274083;
 }
 
-body{font-family: arial; color:#fff; display: grid; grid-template-columns: 75% 25%;
-grid-template-areas: 'cabecalho formulario'
-                     'principal formulario'
-                     'rodape formulario';
-height:100vh;
+body{font-family: arial;
+    color:#fff;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-areas: 'cabecalho formulario'
+                         'principal formulario'
+                         'rodape formulario';
+    height:100vh;
 }
 
 /*HEADER*/
@@ -86,12 +89,14 @@ aside input, aside select, aside button{
 ::placeholder{
     color: black;
 }
-aside input:focus, aside select:focus{
-    outline: 2px solid #3375B2;
-}
-/* aside:where(input, select):focus{
+/* aside input:focus, aside select:focus{
     outline: 2px solid #3375B2;
 } */
+/* não precisa deixa o :where colado em outro seletor (a:where), caso contrario não vai fucionar */
+
+aside :where(input, select):focus{
+    outline: 2px solid #3375B2;
+}
 aside button{
     background-color: #11dd2c;
     cursor: pointer;
@@ -124,4 +129,45 @@ footer .rodape-titulo{
 footer .rodape-conteudo{
     text-align: justify;
     line-height: 0.7cm;
+}
+
+/* RESPONSIVIDADE */
+/* tablet */
+@media screen and (max-width:1200px){
+    body{
+        grid-template-columns: 100%;
+        grid-template-areas: 'cabecalho'
+                             'principal'
+                             'rodape'
+                             'formulario';
+    }
+    main figure{
+        margin-right: 20px;
+    }
+    main{
+        height: 50vh;
+    }
+}
+
+/* smartphone */
+@media screen and (max-width:750px){
+    main{
+        background: #3375B2 url(../imagens/livro2.png) 200px;
+        background-size: 200px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-blend-mode: multiply;
+    }
+
+    main figure{
+        display: none;
+    }
+    main h1, main h3{
+        width: 100%;
+        text-shadow: 2px 1px 1px #000;
+    }
+    footer{
+        flex-direction: column;
+        row-gap: 20px;
+    }
 }
